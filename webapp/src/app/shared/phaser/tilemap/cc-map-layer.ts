@@ -92,6 +92,14 @@ export class CCMapLayer extends Phaser.Image implements Sortable {
 		}
 	}
 
+	getTilesetSize() {
+		return this.tilesetSize;
+	}
+
+	getFullTilesetSize() {
+		return <Point>{x: this.tilesetSize.x * this.details.tilesize, y: this.tilesetSize.y * this.details.tilesize};
+	}
+
 	makeTile(index: number) {
 		const tileset = this.tilesetImage;
 		const tilesize = this.details.tilesize;
